@@ -2,12 +2,12 @@
 
 ## 🎯 Mission Statement
 
-We’re building the first AI companion that helps kids explore not just careers — but who they could become.
+We're building the first AI companion that helps kids explore not just careers — but who they could become.
 In a world that still defines children by grades, test scores, or expectations, Become.AI unlocks self-discovery through immersive storytelling, intelligent simulations, and AI-powered self-reflection.
 
 ## 💡 Introduction
 
-**Becom.AI** is an innovative AI-powered career exploration platform designed specifically for children and teenagers (ages 6-17). The app uses Google Gemini AI to analyze users’ dreams—including text, audio, and drawings as well as their interactive choices, to help them discover potential career paths through an engaging, age-appropriate experience.
+**Becom.AI** is an innovative AI-powered career exploration platform designed specifically for children and teenagers (ages 6-17). The app uses Google Gemini AI to analyze users' dreams—including text, audio, and drawings as well as their interactive choices, to help them discover potential career paths through an engaging, age-appropriate experience.
 
 ## 🌟 Features
 
@@ -64,3 +64,20 @@ In a world that still defines children by grades, test scores, or expectations, 
 ## 🔭 Vision Statement
 
 **Become.AI** - Empowering the next generation to dream, discover, and become.
+
+## 👥 Team Members
+
+### **Thea Claire Anil**
+
+- **Email**: thea.anil02@gmail.com
+- **GitHub**: [thea02](https://github.com/thea02)
+
+### **Barath Sundararaj**
+
+- **Email**: barath.2952@gmail.com
+- **GitHub**: [Barath-S29](https://github.com/Barath-S29)
+
+### **Nadia Tasnim Mim**
+
+- **Email**: mimnadiatasnim@gmail.com
+- **GitHub**: [Nadia-Mim](https://github.com/Nadia-Mim)
