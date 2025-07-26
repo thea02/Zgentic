@@ -1,6 +1,12 @@
-# Becom.AI - AI-Powered Career Exploration Platform for Children
+# Becom.AI: Career Exploration System
 
-## Agent Workflow
+# Overview
+
+Becom.AI is an AI-powered career exploration application for children and teenagers (ages 6-17). The system uses Google's Gemini AI to analyze user dreams and drawings, provide personalized career guidance, and create interactive learning experiences through career simulations and mini-missions.
+
+<br>
+
+# 1. Agent Workflow
 
 ### 1. Multi-Modal Analysis Pipeline
 
@@ -29,7 +35,8 @@ The agent dynamically adjusts its reasoning based on:
 - **User Engagement**: Tracks interaction patterns to maintain engagement
 - **Skill Development**: Progressively introduces more complex career concepts
 
-## Memory Usage
+
+## Memory Usage 
 
 ### 1. Session-Based Memory
 
@@ -80,7 +87,22 @@ The agent employs a step-by-step approach:
 - **Retry Logic**: Implements retry mechanisms for image generation
 - **State Recovery**: Allows users to restart from various points in the flow
 
-## Tool Integration
+<br>
+
+# 2. Key Modules:
+
+The "agent" logic is not a continuous loop but is distributed between the UI controller and a dedicated service module.
+
+*   **Planner**: The `App.tsx` component serves as the planner. It determines the sequence of operations based on user input and the current `appState`. For example, after the user submits their age, it transitions the state to `DREAM_INPUT`. After analysis, it transitions to `RESULTS_DISPLAY`. It plans the user's journey through the application's features.
+*   **Executor**: The `services/geminiService.ts` module is the primary executor. It contains all the logic for interacting with the Gemini API.
+    *   It constructs detailed system instructions and user prompts tailored to the user's age.
+    *   It defines rigid **JSON schemas** (`responseSchema`) to enforce structured, reliable output from the `gemini-2.5-flash` model for analysis, game generation, and planning.
+    *   It calls the `imagen-3.0-generate-002` model to generate all visual assets dynamically, from career path illustrations to icons for the growth map.
+*   **Memory**: The application uses short-term, session-based memory. All user data (`userAge`, `dreamText`, `analysisResult`, `unlockedSkills`, etc.) is stored in the React state within the `App.tsx` component. This memory is cleared when the user resets the app or refreshes the page. There is no long-term persistence or vector database.
+
+<br>
+
+# 3. Tool Integration
 
 ### 1. Google Workspace Integration
 
@@ -105,7 +127,18 @@ The agent employs a step-by-step approach:
 - **Online Learning Platforms**: Recommends age-appropriate courses
 - **Local Activity Discovery**: Suggests community-based learning opportunities
 
-## Known Limitations
+<br>
+
+# 4. Observability & Testing
+
+*   **Logging**: `console.error` and `console.warn` are used within `catch` blocks in both `App.tsx` and `geminiService.ts` to log detailed errors during API calls or data processing.
+*   **Error Handling & Retries**:
+    *   **UI-Level**: The `App.tsx` component has a centralized `handleError` function that catches errors from services, sets a user-friendly error message in the state, and switches the UI to a dedicated `AppState.ERROR` view.
+    *   **API-Level**: The `generateImage` function in `geminiService.ts` implements a robust retry mechanism with **exponential backoff and jitter** to gracefully handle rate-limiting errors (e.g., 429) from the Gemini API, improving the reliability of image generation.
+
+<br>
+
+# 5. Known Limitations
 
 ### 1. AI Model Limitations
 
@@ -150,7 +183,7 @@ The agent employs a step-by-step approach:
 - **Multi-Language Support**: Add support for additional languages
 - **Accessibility Features**: Implement screen readers and keyboard navigation
 - **Parent Dashboard**: Provide insights and guidance for parents
-- **Collaborative Features**: Allow peer learning and sharing
+- **Collaborative Features**: Allow peer learning and sharing of similar interests
 
 ### 3. Advanced AI Integration
 
@@ -159,6 +192,14 @@ The agent employs a step-by-step approach:
 - **Real-Time Feedback**: Provide immediate guidance during interactions
 - **Predictive Analytics**: Anticipate user needs and interests
 
-## Conclusion
+<br>
 
-BecomAI represents a sophisticated approach to AI-powered career exploration for young users. While it has limitations in persistence, cultural context, and comprehensive skill assessment, it provides an engaging and age-appropriate introduction to career exploration. The system's strength lies in its ability to adapt content to different developmental stages and create personalized, interactive learning experiences that inspire curiosity about future career possibilities.
+# Conclusion
+
+Becom.AI pioneers a novel approach to career exploration by combining multimodal AI analysis, age-sensitive personalization, and interactive storytelling — all powered by Google's Gemini API. Designed specifically for children and teens aged 6–17, it transforms self-expression (dreams, drawings, voice) into meaningful guidance through personalized career pathways and simulations.
+
+What sets Becom.AI apart is not just its use of cutting-edge AI, but its thoughtful agentic design: it doesn’t just respond to inputs — it interprets, adapts, and guides. The system dynamically analyzes user-submitted content, creates age-appropriate missions, and empowers users to explore potential futures in a safe, imaginative environment.
+
+Though it currently operates with session-based memory and single-user focus, Becom.AI lays a strong foundation for scalable, persistent, and deeply personalized educational AI. 
+
+In a world where AI is reshaping education, Becom.AI offers more than career suggestions — it helps young minds discover who they might become.
