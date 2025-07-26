@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Becom.AI: Your Future Self</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+      body {
+        font-family: 'Nunito', sans-serif;
+      }
+      :root, .theme-default {
+        --bg-gradient-from: #1c0f3a;
+        --bg-gradient-via: #3d1a55;
+        --bg-gradient-to: #713371;
+        --color-primary: #FBBF24; /* yellow-400 */
+        --color-primary-hover: #F59E0B; /* yellow-500 */
+        --color-primary-text: #581C87; /* purple-900 */
+        --color-accent: #FBBF24;
+        --color-text-accent: #FDE047; /* yellow-300 */
+        --color-text-base: #FFFFFF;
+        --color-text-muted: rgba(255, 255, 255, 0.8);
+        --color-trait-bg: #FBBF24;
+        --color-trait-text: #581C87;
+        --color-unlocked-skill-bg: rgba(74, 222, 128, 0.2);
+        --color-unlocked-skill-text: #86EFAC;
+        --color-unlocked-skill-border: #4ADE80;
+        --color-card-border-1: #a855f7;
+        --color-card-border-2: #ec4899;
+        --color-card-bg-1: rgba(168, 85, 247, 0.2);
+        --color-card-bg-2: rgba(236, 72, 153, 0.2);
+        --color-link-bg: rgba(251, 191, 36, 0.2);
+        --color-link-text: #FDE047;
+      }
+      /* Cosmic Explorer (Ages 6-10) */
+      .theme-younger {
+        --bg-gradient-from: #1e3a8a; /* dark navy */
+        --bg-gradient-via: #3730a3; /* dark indigo */
+        --bg-gradient-to: #5b21b6; /* dark violet */
+        --color-primary: #f97316; /* vibrant orange */
+        --color-primary-hover: #ea580c; /* darker orange */
+        --color-primary-text: #ffffff;
+        --color-accent: #facc15; /* vibrant yellow */
+        --color-text-accent: #fde047; /* lighter yellow */
+        --color-text-base: #f3f4f6; /* off-white */
+        --color-text-muted: rgba(243, 244, 246, 0.85);
+        --color-trait-bg: #facc15;
+        --color-trait-text: #1e3a8a;
+        --color-unlocked-skill-bg: rgba(250, 204, 21, 0.2);
+        --color-unlocked-skill-text: #fde047;
+        --color-unlocked-skill-border: #facc15;
+        --color-card-border-1: #f97316;
+        --color-card-border-2: #facc15;
+        --color-card-bg-1: rgba(249, 115, 22, 0.1);
+        --color-card-bg-2: rgba(250, 204, 21, 0.1);
+        --color-link-bg: rgba(250, 204, 21, 0.2);
+        --color-link-text: #fde047;
+      }
+      /* Digital Creator (Ages 11-13) */
+      .theme-middle {
+        --bg-gradient-from: #0f766e; /* dark teal */
+        --bg-gradient-via: #104c6d;
+        --bg-gradient-to: #1e40af; /* dark green-blue */
+        --color-primary: #d946ef; /* vibrant fuchsia */
+        --color-primary-hover: #c026d3; /* darker fuchsia */
+        --color-primary-text: #ffffff;
+        --color-accent: #84cc16; /* lime green */
+        --color-text-accent: #a3e635; /* lighter lime */
+        --color-text-base: #e5e7eb; /* cool gray 200 */
+        --color-text-muted: rgba(229, 231, 235, 0.85);
+        --color-trait-bg: #a3e635;
+        --color-trait-text: #0f766e;
+        --color-unlocked-skill-bg: rgba(163, 230, 53, 0.15);
+        --color-unlocked-skill-text: #a3e635;
+        --color-unlocked-skill-border: #84cc16;
+        --color-card-border-1: #d946ef;
+        --color-card-border-2: #84cc16;
+        --color-card-bg-1: rgba(217, 70, 239, 0.1);
+        --color-card-bg-2: rgba(132, 204, 22, 0.1);
+        --color-link-bg: rgba(163, 230, 53, 0.2);
+        --color-link-text: #a3e635;
+      }
+      /* Future Innovator (Ages 14-17) */
+      .theme-older {
+        --bg-gradient-from: #111827; /* gray 900 */
+        --bg-gradient-via: #1f2937; /* gray 800 */
+        --bg-gradient-to: #374151; /* gray 700 */
+        --color-primary: #3b82f6; /* blue 500 */
+        --color-primary-hover: #2563eb; /* blue 600 */
+        --color-primary-text: #ffffff;
+        --color-accent: #60a5fa; /* blue 400 */
+        --color-text-accent: #60a5fa;
+        --color-text-base: #d1d5db; /* gray 300 */
+        --color-text-muted: rgba(209, 213, 219, 0.85);
+        --color-trait-bg: #3b82f6;
+        --color-trait-text: #ffffff;
+        --color-unlocked-skill-bg: rgba(59, 130, 246, 0.15);
+        --color-unlocked-skill-text: #60a5fa;
+        --color-unlocked-skill-border: #3b82f6;
+        --color-card-border-1: #3b82f6;
+        --color-card-border-2: #4b5563; /* gray 600 */
+        --color-card-bg-1: rgba(59, 130, 246, 0.1);
+        --color-card-bg-2: rgba(255, 255, 255, 0.05);
+        --color-link-bg: rgba(59, 130, 246, 0.2);
+        --color-link-text: #60a5fa;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.11.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

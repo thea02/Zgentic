@@ -1,42 +1,66 @@
-# Agentic AI App Hackathon Template
+# Becom.AI - AI-Powered Career Exploration Platform for Children
 
-Welcome! This repository is your starting point for the **Agentic AI App Hackathon**. It includes:
+## 🎯 Mission Statement
 
-- A consistent folder structure  
-- An environment spec (`environment.yml` or `Dockerfile`)  
-- Documentation placeholders to explain your design and demo
+We’re building the first AI companion that helps kids explore not just careers — but who they could become.
+In a world that still defines children by grades, test scores, or expectations, Become.AI unlocks self-discovery through immersive storytelling, intelligent simulations, and AI-powered self-reflection.
 
-## 📋 Submission Checklist
+## 💡 Introduction
 
-- [ ] All code in `src/` runs without errors  
-- [ ] `ARCHITECTURE.md` contains a clear diagram sketch and explanation  
-- [ ] `EXPLANATION.md` covers planning, tool use, memory, and limitations  
-- [ ] `DEMO.md` links to a 3–5 min video with timestamped highlights  
+**Becom.AI** is an innovative AI-powered career exploration platform designed specifically for children and teenagers (ages 6-17). The app uses Google Gemini AI to analyze users’ dreams—including text, audio, and drawings as well as their interactive choices, to help them discover potential career paths through an engaging, age-appropriate experience.
 
+## 🌟 Features
 
-## 🚀 Getting Started
+### **Dream Analysis**
 
-1. **Clone / Fork** this template.  Very Important. Fork Name MUST be the same name as the teamn name
+- **Drawing Canvas**: Children can draw their dreams and aspirations
+- **Voice & Text Input**: Support for both voice recording and text input
+- **AI Analysis**: Gemini AI analyzes drawings and text to identify personality traits and interests
 
+### **Interactive Career Simulation**
 
-## 📂 Folder Layout
+- **Age-Appropriate Content**: Tailored experiences for different age groups (6-10, 11-13, 14-17)
+- **Story-Driven Choices**: Engaging narratives that present career-related decisions
+- **Mini-Missions**: Interactive games that test relevant skills for each career path
 
-![Folder Layout Diagram](images/folder-githb.png)
+### **Real-World Action Planning**
 
+- **Personalized Recommendations**: YouTube videos, online courses, and local activities based on the child's interest
+- **Growth Mapping**: Visual mind maps or Vision Boards connecting traits to career paths
+- **Parent Communication**: Automated email summaries for parental guidance on the child's interest
 
+## 🚀 Technology Stack
 
-## 🏅 Judging Criteria
+- **Frontend**: React 19 with TypeScript
+- **AI Integration**: Google Gemini 2.5 Flash API
+- **Image Generation**: Google Imagen 3.0
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
 
-- **Technical Excellence **  
-  This criterion evaluates the robustness, functionality, and overall quality of the technical implementation. Judges will assess the code's efficiency, the absence of critical bugs, and the successful execution of the project's core features.
+## 🤖 Key AI Features
 
-- **Solution Architecture & Documentation **  
-  This focuses on the clarity, maintainability, and thoughtful design of the project's architecture. This includes assessing the organization and readability of the codebase, as well as the comprehensiveness and conciseness of documentation (e.g., GitHub README, inline comments) that enables others to understand and potentially reproduce or extend the solution.
+### **Gemini Integration**
 
-- **Innovative Gemini Integration **  
-  This criterion specifically assesses how effectively and creatively the Google Gemini API has been incorporated into the solution. Judges will look for novel applications, efficient use of Gemini's capabilities, and the impact it has on the project's functionality or user experience. You are welcome to use additional Google products.
+- **Multi-modal Analysis**: Processes both text, drawing and voice inputs
+- **Age-Adaptive Responses**: Tailors content complexity based on user age
+- **Structured Output**: Uses JSON schemas for consistent, reliable responses
+- **Image Generation**: Creates custom illustrations for career paths and scenarios
 
-- **Societal Impact & Novelty **  
-  This evaluates the project's potential to address a meaningful problem, contribute positively to society, or offer a genuinely innovative and unique solution. Judges will consider the originality of the idea, its potential real‑world applicability, and its ability to solve a challenge in a new or impactful way.
+### **Interactive Game Design**
 
+- **Skill-Based Challenges**: Tests relevant abilities for each career
+- **Dynamic Content**: Generates unique scenarios and objects for each session
+- **Progressive Feedback**: Provides encouraging, age-appropriate coaching
 
+## 🌍 Societal Impact
+
+**Become.AI** addresses the critical need for early career exploration and guidance:
+
+- **Democratizes Career Discovery**: Makes career exploration accessible to all children free from parental expecations and grades.
+- **Reduces Career Anxiety**: Offers uplifting, personalized guidance that builds confidence and curiosity.
+- **Supports Parental Involvement**: Includes parents in the discovery process
+- **Promotes Skill Development**: Identifies and nurtures natural talents of young children
+
+## 🔭 Vision Statement
+
+**Become.AI** - Empowering the next generation to dream, discover, and become.
