@@ -1,5 +1,5 @@
 # Architecture Overview
-![Architechture Diagram](architecture_diagram.jpeg)
+![Architechture Diagram](images/architecture_diagram.jpeg)
 
 ## Components
 
